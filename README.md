@@ -35,7 +35,7 @@ A simple web application that shows the current weather and 5-day forecast for a
 
 ## Live Demo
 If hosted on GitHub Pages:   
-https://milajovanovska.github.io/my-weather-app/
+https://milajovanovska.github.io/My_Weather_App/
 
 ---
 
