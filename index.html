@@ -33,16 +33,17 @@
             color: white;
             text-align: center;
         }
+
         .cloud {
             position: absolute;
             width: 120px;
             height: 70px;
-            background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.85));
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
             border-radius: 50px;
-            box-shadow: -30px 10px 0 10px rgba(255,255,255,0.9),
-            -10px -10px 0 12px rgba(255,255,255,0.85),
-            20px -15px 0 15px rgba(255,255,255,0.9),
-            45px 5px 0 12px rgba(255,255,255,0.88);
+            box-shadow: -30px 10px 0 10px rgba(255, 255, 255, 0.9),
+            -10px -10px 0 12px rgba(255, 255, 255, 0.85),
+            20px -15px 0 15px rgba(255, 255, 255, 0.9),
+            45px 5px 0 12px rgba(255, 255, 255, 0.88);
             filter: blur(0.8px);
             z-index: 0;
         }
@@ -66,28 +67,75 @@
         }
 
         @keyframes moveCloud1 {
-            0% { left: -150px; opacity: 1; transform: scale(0.8); }
-            95% { opacity: 1; }
-            100% { left: 100vw; opacity: 0; transform: scale(0.8); }
+            0% {
+                left: -150px;
+                opacity: 1;
+                transform: scale(0.8);
+            }
+            95% {
+                opacity: 1;
+            }
+            100% {
+                left: 100vw;
+                opacity: 0;
+                transform: scale(0.8);
+            }
         }
 
         @keyframes moveCloud2 {
-            0% { left: 30%; opacity: 1; transform: scale(1.1); }
-            70% { left: 100vw; opacity: 1; }
-            71% { opacity: 0; left: 100vw; }
-            72% { left: -200px; opacity: 0; }
-            80% { opacity: 1; }
-            100% { left: 30%; opacity: 1; }
+            0% {
+                left: 30%;
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            70% {
+                left: 100vw;
+                opacity: 1;
+            }
+            71% {
+                opacity: 0;
+                left: 100vw;
+            }
+            72% {
+                left: -200px;
+                opacity: 0;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                left: 30%;
+                opacity: 1;
+            }
         }
 
         @keyframes moveCloud3 {
-            0% { left: 60%; opacity: 1; transform: scale(0.9); }
-            40% { left: 100vw; opacity: 1; }
-            41% { opacity: 0; left: 100vw; }
-            42% { left: -200px; opacity: 0; }
-            50% { opacity: 1; }
-            100% { left: 60%; opacity: 1; }
+            0% {
+                left: 60%;
+                opacity: 1;
+                transform: scale(0.9);
+            }
+            40% {
+                left: 100vw;
+                opacity: 1;
+            }
+            41% {
+                opacity: 0;
+                left: 100vw;
+            }
+            42% {
+                left: -200px;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                left: 60%;
+                opacity: 1;
+            }
         }
+
         .stars {
             position: fixed;
             inset: 0;
@@ -104,6 +152,7 @@
             border-radius: 50%;
             opacity: 0.8;
         }
+
         .app {
             padding: 10px 30px;
             border-radius: 12px;
@@ -294,6 +343,7 @@
             height: 45px;
 
         }
+
         .polaroid-container {
             position: fixed;
             inset: 0;
@@ -301,6 +351,7 @@
             z-index: 1;
             display: none;
         }
+
         .polaroid {
             position: absolute;
             background: white;
@@ -361,38 +412,71 @@
             top: 55%;
             --angle: -6deg;
         }
+
         .context-save-message {
             position: absolute;
             top: 10px;
             right: 10px;
             padding: 10px 20px;
-            background-color: rgba(0,0,0,0.6);
+            background-color: rgba(0, 0, 0, 0.6);
             color: white;
             font-weight: bold;
             border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             opacity: 0;
             transform: translateY(-10px);
             transition: all 0.5s ease;
             z-index: 1000;
             pointer-events: none;
         }
+
         .context-save-message.show {
             opacity: 1;
             transform: translateY(0);
         }
+
         .center-save-message.show {
             opacity: 1;
             transform: translate(-50%, -50%) scale(1);
             animation: floatBounce 2.5s ease-in-out forwards;
         }
+
         @keyframes floatBounce {
-            0%   { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
-            20%  { transform: translate(-50%, -55%) scale(1.05) rotate(-2deg); }
-            40%  { transform: translate(-50%, -50%) scale(1.1) rotate(2deg); }
-            60%  { transform: translate(-50%, -52%) scale(1.05) rotate(-1deg); }
-            80%  { transform: translate(-50%, -50%) scale(1) rotate(1deg); }
-            100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+            0% {
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+            }
+            20% {
+                transform: translate(-50%, -55%) scale(1.05) rotate(-2deg);
+            }
+            40% {
+                transform: translate(-50%, -50%) scale(1.1) rotate(2deg);
+            }
+            60% {
+                transform: translate(-50%, -52%) scale(1.05) rotate(-1deg);
+            }
+            80% {
+                transform: translate(-50%, -50%) scale(1) rotate(1deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+            }
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer p {
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+        .footer a {
+            cursor: pointer;
         }
 
     </style>
@@ -438,6 +522,11 @@
     <button id="backBtn">🏠︎</button>
 </div>
 <div id="contextSaveMessage" class="context-save-message"></div>
+
+<footer class="footer">
+    <p>© 2026 Weather App • Created by <a href="https://github.com/milajovanovska" target="_blank">Mila Jovanovska</a>
+    </p>
+</footer>
 
 <script src="script.js"></script>
 </body>
