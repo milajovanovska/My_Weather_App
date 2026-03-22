@@ -33,6 +33,11 @@ function setupBackgroundByTime() {
             "linear-gradient(135deg, #0f2027, #203a43, #2c5364)";
         generateStars();
     }
+    setInterval(() => {
+        if (document.getElementById("stars").style.display !== "none") {
+            createShootingStar();
+        }
+    }, 2000);
 }
 
 function generateStars() {
@@ -357,4 +362,17 @@ showForecastBtn.onclick = () => {
         showForecastBtn.textContent = "Show 5-day forecast";
     }
 };
+function createShootingStar() {
+    const stars = document.getElementById("stars");
+    const star = document.createElement("div");
+    star.className = "shooting-star";
+    star.style.top = Math.random() * 30 + "%";
+    star.style.left = Math.random() * 80 + "%";
+    const duration = 0.8 + Math.random() * 0.8;
+    star.style.animation = `shoot ${duration}s linear`;
+    stars.appendChild(star);
+    setTimeout(() => {
+        star.remove();
+    }, duration * 1000);
+}
 

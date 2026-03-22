@@ -507,7 +507,35 @@
             cursor: pointer;
             color: darkblue;
         }
+        .shooting-star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 8px white, 0 0 15px white;
+            opacity: 0;
+        }
+        .shooting-star::after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(to right, white, transparent);
+            top: 50%;
+            left: -80px;
+        }
 
+        @keyframes shoot {
+            0% {
+                transform: translate(0, 0) rotate(45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(400px, 400px) rotate(45deg);
+                opacity: 0;
+            }
+        }
     </style>
 
 </head>
