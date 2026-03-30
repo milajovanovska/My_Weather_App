@@ -16,30 +16,47 @@ const saveMessage = document.getElementById("saveMessage");
 
 let currentCity = null;
 
-function setupBackgroundByTime() {
-    const hour = new Date().getHours();
+function setupBackgroundByUserTime() {
+    const now = new Date();
+    const hour = now.getHours();
+
     const clouds = document.querySelectorAll(".cloud");
     const starsContainer = document.getElementById("stars");
 
-    if (hour >= 6 && hour < 18) {
+    starsContainer.style.display = "none";
+    clouds.forEach(c => c.style.display = "none");
+    if (hour >= 6 && hour < 8) {
         clouds.forEach(c => c.style.display = "block");
-        starsContainer.style.display = "none";
+        document.body.style.background =
+            "linear-gradient(135deg, #fceabb, #f8b500)";
+    }
+    else if (hour >= 8 && hour < 17) {
+        clouds.forEach(c => c.style.display = "block");
         document.body.style.background =
             "linear-gradient(135deg, #89f7fe, #66a6ff)";
-    } else {
-        clouds.forEach(c => c.style.display = "none");
+    }
+    else if (hour >= 17 && hour < 18) {
+        clouds.forEach(c => c.style.display = "block");
+        document.body.style.background =
+            "linear-gradient(135deg, #89f7fe, #66a6ff)";
+    }
+    else if (hour >= 18 && hour < 21) {
+        clouds.forEach(c => c.style.display = "block");
+        document.body.style.background =
+            "linear-gradient(135deg, #ff9a9e, #fad0c4)";
+    }
+    else {
         starsContainer.style.display = "block";
         document.body.style.background =
             "linear-gradient(135deg, #0f2027, #203a43, #2c5364)";
         generateStars();
-    }
-    setInterval(() => {
-        if (document.getElementById("stars").style.display !== "none") {
-            createShootingStar();
+        if (!window.shootingInterval) {
+            window.shootingInterval = setInterval(() => {
+                createShootingStar();
+            }, 2000);
         }
-    }, 2000);
+    }
 }
-
 function generateStars() {
     const stars = document.getElementById("stars");
     stars.innerHTML = "";
@@ -53,8 +70,8 @@ function generateStars() {
     }
 }
 
-setupBackgroundByTime();
-
+setupBackgroundByUserTime();
+setInterval(setupBackgroundByUserTime, 60000);
 
 async function fetchCityPhotos(city) {
     const photoIds = ["img-L1", "img-L2", "img-R1", "img-R2"];
